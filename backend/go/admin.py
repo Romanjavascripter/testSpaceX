@@ -26,4 +26,7 @@ class HeroContentAdmin(admin.ModelAdmin):
         ('Кнопка', {
             'fields': ('button_text', 'button_url')
         }),
+        ('Фон', {
+            'fields': ('background_image',)
+        }),
     )

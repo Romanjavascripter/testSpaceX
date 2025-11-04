@@ -25,5 +25,5 @@ def advantages(request):
 def hero_content(request):
     """API для получения контента главного экрана"""
     content, created = HeroContent.objects.get_or_create(pk=1)
-    serializer = HeroContentSerializer(content)
+    serializer = HeroContentSerializer(content, context={'request': request})
     return Response(serializer.data)

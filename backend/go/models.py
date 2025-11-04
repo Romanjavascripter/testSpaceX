@@ -41,6 +41,7 @@ class HeroContent(models.Model):
     subtitle = models.CharField(max_length=200, default="на красную планету", verbose_name="Подзаголовок")
     button_text = models.CharField(max_length=100, default="Начать путешествие", verbose_name="Текст кнопки")
     button_url = models.CharField(max_length=200, default="#", verbose_name="URL кнопки")
+    background_image = models.ImageField(upload_to='hero/', blank=True, null=True, verbose_name='Фоновое изображение')
     
     class Meta:
         verbose_name = "Контент главного экрана"

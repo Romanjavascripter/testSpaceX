@@ -18,6 +18,11 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+else:
+    # Простая раздача media для продакшена на Render (без отдельного CDN)
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
 
 # Проверка существования build файла
 build_index_path = BASE_DIR.parent / 'frontend' / 'frontend' / 'build' / 'index.html'

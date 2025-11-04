@@ -48,12 +48,14 @@ const Hero = () => {
     const titleHighlight = heroContent?.title_highlight || 'ВИЕ';
     const mainTitleParts = mainTitle.split(titleHighlight);
 
+    const bgUrl = heroContent?.background_image_url || '/image/mars-clean-bg.jpg';
+
     return (
         <section className="hero">
             <div 
                 className="hero-background"
                 style={{
-                    backgroundImage: `url('/image/mars-clean-bg.jpg')`
+                    backgroundImage: `url('${bgUrl}')`
                 }}
             >
                 <div className="hero-overlay"></div>
